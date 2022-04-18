@@ -30,13 +30,13 @@ CREATE Table `events` (
     primary key(eventId)
 );
 
-CREATE Table `courses` (
+CREATE TABLE `attendents`(
     
-    `courseId` int(12) NOT NULL,
-    `courseName` varchar(255) NOT NULL,
-    `courseDatetime` datetime NOT NULL DEFAULT current_timestamp(),
-    `venue` varchar(5000) NOT NULL,
-    `courseDetail` varchar(5000) NOT NULL,
+    `attendentId` int(12) NOT NULL,
+    `eventId` int(12) NOT NULL,
+    `eventName` varchar(255) NOT NULL,
+    FOREIGN KEY (eventId) REFERENCES signatures(eventId)
+    FOREIGN KEY (eventName) REFERENCES signatures(eventName)
 );
 
 CREATE Table `certificates` (
